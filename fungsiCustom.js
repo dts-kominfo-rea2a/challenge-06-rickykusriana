@@ -38,13 +38,13 @@ const bacaData = (fnCallback) => {
         const result = [];
         
         let result1 = JSON.parse(data1).message;
-        result.push(result1.split(" ").splice(-1));
+        result.push(result1.slice(5));
         
         let result2 = JSON.parse(data2)[0].message;
-        result.push(result2.split(" ").splice(-1));
+        result.push(result2.slice(5));
         
         let result3 = JSON.parse(data3)[0].data.message;
-        result.push(result3.split(" ").splice(-1));
+        result.push(result3.slice(5));
 
         fnCallback(err, result);
       })
